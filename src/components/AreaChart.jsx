@@ -1,4 +1,4 @@
-import {Area, AreaChart} from 'recharts'
+import {Area, AreaChart, ResponsiveContainer} from 'recharts'
 
 const productSales = [
     { name: 'Jan', product1: 4000, product2: 2400 },
@@ -11,9 +11,24 @@ const productSales = [
 
 const AreaChartComponent = () => {
     return (
-        <AreaChart width={500} height={400} data={productSales}>
-            <Area dataKey="product1"/>
-        </AreaChart>
+        <ResponsiveContainer width="100%" height="90%">
+            <AreaChart width={500} height={400} data={productSales}>
+                <Area
+                    type="monotone"
+                    dataKey="product1"
+                    stroke="#2563eb"
+                    fill="#3b82f6"
+                    stackId="1"
+                />
+                <Area
+                    type="monotone"
+                    dataKey="product2"
+                    stroke="#7c3aed"
+                    fill="#8b5cf6"
+                    stackId="1"
+                />
+            </AreaChart>
+        </ResponsiveContainer>
     )
 }
 export default AreaChartComponent
