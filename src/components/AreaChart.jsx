@@ -21,12 +21,16 @@ const productSales = [
 const AreaChartComponent = () => {
     return (
         <ResponsiveContainer width="100%" height="90%">
-            <AreaChart width={500} height={400} data={productSales}>
-                <XAxis />
-                <YAxis dataKey="name" />
+            <AreaChart
+                width={500}
+                height={400}
+                data={productSales}
+                margin={{right: 30}}>
+                <YAxis />
+                <XAxis dataKey="name" />
                 <CartesianGrid strokeDasharray="5 5" />
-                <Tooltip/>
-                <Legend/>
+                <Tooltip content={<CostumeTooltip />}/>
+                <Legend />
                 <Area
                     type="monotone"
                     dataKey="product1"
@@ -46,10 +50,10 @@ const AreaChartComponent = () => {
     );
 };
 
-const CostumeTooltip = ({ activate, payload, label }) => {
-    if (activate && payload && payload.length) {
+const CostumeTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
         return (
-            <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md border border-slate-700">
+            <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
                 <p className="text-medium text-lg">{label}</p>
                 <p className="text-sm text-blue-400">
                     Product 1:
@@ -62,6 +66,6 @@ const CostumeTooltip = ({ activate, payload, label }) => {
             </div>
         );
     }
-}
+};
 
 export default AreaChartComponent
