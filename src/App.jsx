@@ -1,5 +1,6 @@
 import React from 'react'
-import AreaChart from "./components/AreaChart.jsx";
+import AreaChartComponent from "./components/AreaChart.jsx";
+import BarChartComponent from "./components/BarChart.jsx";
 
 const App = () => {
     return (
@@ -7,11 +8,12 @@ const App = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-10 max-w-[1400px]">
                 <div className="h-[400px] w-full bg-slate-800/50 p-4 rounded-xl border border-slate-800">
                     <h2 className="text-center text-xl font-semibold mb-4">Area Chart</h2>
-                    <AreaChart />
+                    <AreaChartComponent />
                 </div>
 
                 <div className="h-[400px] w-full bg-slate-800/50 p-4 rounded-xl border border-slate-800">
-
+                    <h2 className="text-center text-xl font-semibold mb-4">Bar Chart</h2>
+                    <BarChartComponent />
                 </div>
 
                 <div className="h-[400px] w-full bg-slate-800/50 p-4 rounded-xl border border-slate-800 xl:col-span-1 lg:col-span-2">
