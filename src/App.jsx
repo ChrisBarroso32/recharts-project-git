@@ -1,6 +1,7 @@
 import React from 'react'
 import AreaChartComponent from "./components/AreaChart.jsx";
 import BarChartComponent from "./components/BarChart.jsx";
+import LineChartComponent from "./components/LineChart.jsx";
 
 const App = () => {
     return (
@@ -17,7 +18,8 @@ const App = () => {
                 </div>
 
                 <div className="h-[400px] w-full bg-slate-800/50 p-4 rounded-xl border border-slate-800 xl:col-span-1 lg:col-span-2">
-
+                    <h2 className="text-center text-xl font-semibold mb-4">Line Chart</h2>
+                    <LineChartComponent />
                 </div>
             </div>
         </main>
